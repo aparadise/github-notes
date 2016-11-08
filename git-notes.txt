@@ -1,3 +1,4 @@
+Commands for unix (not sure what happens in the new branch)
 Commands for unix
 
 1) ls -l (this will list all the directorys by a FULL detal view with date, size and name. however 'ls -al' will do the same but show hidden files )
@@ -91,6 +92,16 @@ note: working with difftool on the LEFT side is the staging area RIGHT side is l
 
 note: if git stuck in the terminal and i see ":" in the bottom left corner type hit the "space bar" then type the letter "q"
 
+41) $ git diff master origin/master (this will compare your local master to the origin master on github)
+
+
+42) 41) $ git difftool master origin/master (this will compare your local master to the origin master on github)
+
+43) $ git checkout -b newBranchName (how you create a NEW branch. once you do this it will auto kick you out of the current branch into the create branch)
+
+44) $ git diff newBranch master (this will run diff between the two branches)
+
+45) $ git difftool newBranch master (this will run diff between the two branches)
 
 
 ********************Unzip a file **********
@@ -492,8 +503,21 @@ working with difftool on the LEFT side is the staging area RIGHT side is local a
 note: if git stuck in the terminal and i see ":" in the bottom left corner type hit the "space bar" then type the letter "q"
 
 
+10) $ git diff master origin/master (this will compare your local master to the origin master on github)
 
 
+11) $ git difftool master origin/master (this will compare your local master to the origin master on github)
+
+
+*******Create a NEW branch and to SWITCH BRANCHES*****
+
+1) $ git checkout -b newBranchName (how you create a NEW branch. once you do this it will auto kick you out of the current branch into the create branch)
+
+2) $ git checkout master
+
+3) $ git diff newBranch master (this will run diff between the two branches)
+
+4) $ git difftool newBranch master (this will run diff between the two branches)
 
 
 
