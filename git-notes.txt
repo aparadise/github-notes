@@ -555,8 +555,7 @@ note: if git stuck in the terminal and i see ":" in the bottom left corner type 
 
 ------------------------------
 
-
-section 15 VIDEO 73 GIT COMMANDS DEEP DIVE
+******GIT COMMANDS DEEP DIVE
 
 
   1.  $ git log -oneline —decorate —graph —all  (this will show information in great details)
@@ -604,6 +603,20 @@ note:  you will see all of your branches you will notice that your sub branches 
  1.   $ git checkout -b newBranchName master (this is how you make a new branch and copy everything from the master. once you do this 
       do $ git log —online to make sure you have the same commit details. and another way to check is to do a checkout on both branches the new     
   branch and the master to compare history files.)
+
+ note: Understand that when you make a NEW branch it auto inherits the commit history from its parents branch. If you want to control the parent branch make sure you add the name of it
+after this command: "$ git checkout -b newBranchName master" and you check this once your new branch is made by " $ git log --oneline " to check the commit history. 
+
+2) $ git checkout -b newBranchName master
+
+**** Fast Foward Merge **********
+
+Before you do a merge ALWAYS do 'git diff' or 'git difftool" on the files first.
+
+ 1) $ git git difftool master branchNameFeature
+ 2) Once you see that the master DOES NOT have your changes then do a merge.
+ 3) $ git merge nameOfFeatureBranch (also make sure you in the master branch when merging)
+(test merge)
 
 
 
