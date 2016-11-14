@@ -1,4 +1,3 @@
-Commands for unix (not sure what happens in the new branch)
 Commands for unix
 
 1) ls -l (this will list all the directorys by a FULL detal view with date, size and name. however 'ls -al' will do the same but show hidden files )
@@ -23,7 +22,7 @@ Commands for unix
 
 11) $ git checkout -b new-Branch-Name (to add a new branch AFTER you detach a file from head to make changes)
 
-12) $ git add . (return/enter)(note--- if you use git '$ git add .' you will add ALL the files that are in the staging area) $ git commit -m "some message"
+12) $ git add . (return/enter)(note--- if you use git '$ git add .' you are adding ALL the files that are in the staging area) $ git commit -m "some message"
 
 13) how to "revert" a commited file. type: $ git revert HEAD (this will auto open VI editor to make changes)
 
@@ -59,6 +58,11 @@ Commands for unix
 
 note 26 & 27 "git pull origin master" means... "origin" is the remote repository and "master" points to the master branch of the remote repository.
 and...  "git push origin master" means ... "origin" refers to the remote repository and "master" refers to the master branch of your local repository
+
+note: $ git remote -v  (this will show you if your folder/files are linked to your remote git repo)  https://www.youtube.com/watch?v=O72FWNeO-xY
+
+note: $ git remote origin folderName (this you will force a new repo if you do not do it from inside of git)
+
 
 
 28) $ git diff
@@ -97,11 +101,19 @@ note: if git stuck in the terminal and i see ":" in the bottom left corner type 
 
 42) 41) $ git difftool master origin/master (this will compare your local master to the origin master on github)
 
-43) $ git checkout -b newBranchName (how you create a NEW branch. once you do this it will auto kick you out of the current branch into the create branch)
+43) $ git checkout -b newBranchName (how you create a NEW branch. once you do this it will auto kick you out of the current branch into the create branch. the it will inherit all of the commits from its parent branch)
 
-44) $ git diff newBranch master (this will run diff between the two branches)
+44) $ git diff  master localBranchName (this will run diff between the two branches)
 
-45) $ git difftool newBranch master (this will run diff between the two branches)
+45) $ git difftool master localBranchName (this will run diff between the two branches)
+
+47) $ git mergetool (this gives a 3 way merge look at the conflicts)
+
+  Note: the merge conficted files will show where the conflict starts and stops. When it stops it will show what branch the file is in..
+
+48) you can make your own ' .ignore" file to stop git from tracking any files you do not want to be kept tracked of.
+
+
 
 ****Branching notes***
 
@@ -109,7 +121,7 @@ note: if git stuck in the terminal and i see ":" in the bottom left corner type 
   47.  $git log —stat (this will show you files altered and lined deleted. and when you hit space bar you can see files)
   48.  $ git log —stat —oneline -n  2 (limit it two commits)
   49.  $ git log -p (this  is to see patches. this is GREAT to see full edit of code for diff )
-  50.  5) $ git log -p —oneline -n 1 (you can limit to just one line of commits or -1)
+  50.  $ git log -p —oneline -n 1 (you can limit to just one line of commits or -1)
   51.  $ git log  directoryName (this let is GREAT for just looking commit history JUST in a specific directory)
   52.  $ git log —oneline —grep=“football” (how to search for a string in a branch. ‘—grep’ is the key to search lines matching a regular expression) 
 
@@ -130,8 +142,26 @@ We create a NEW BRANCH when we want to develop a new feature or a bug fix no mat
 
 
 note:  you will see all of your branches you will notice that your sub branches are under the master branch. Then you will need to checkout the subbranch you want to work into that branch to create directories and files..
+ 
 
+**** RULES for deleting files ****
 
+59) a) DELETE FILES: $ git rm yourFileName (if does not work try and add the file first: $ git add . fileName)
+
+    b) after you delete a file do get status to see the removed file: $ git status
+
+    c) next type: $ git commit -m "last status before i deleted file from local"
+
+    note: remember  you are only deleting the file from local NOT the git repo this way. To actually delete the file from the git repo you must do another step
+
+    d) delete a entire branch type: $ git branch -d yourBranchName ( you want be able to delete the branch if the files inside HAS NOT been commited. so if you are sure that you dont want to commit      anything  in the branch then you can for the branch to delete by typing: $ git branch -D branchName (notice its a capital "D")
+
+note: to list your branches type: $ git branch -a
+note: always check your branches:  $ git log --oneline —-decorate -—graph -—all
+
+**** --amend --no-edit
+
+60) $ git --amend --no-edit (this will allow you commit a file without giving a new message and just keep the message from before)
 
 
 
@@ -537,10 +567,7 @@ working with difftool on the LEFT side is the staging area RIGHT side is local a
 note: if git stuck in the terminal and i see ":" in the bottom left corner type hit the "space bar" then type the letter "q"
 
 
-10) $ git diff master origin/master (this will compare your local master to the origin master on github)
-
-
-11) $ git difftool master origin/master (this will compare your local master to the origin master on github)
+10) $ git diff master localBranchName (this will compare master origin on github to the local origin)
 
 
 *******Create a NEW branch and to SWITCH BRANCHES*****
@@ -558,7 +585,7 @@ note: if git stuck in the terminal and i see ":" in the bottom left corner type 
 ******GIT COMMANDS DEEP DIVE
 
 
-  1.  $ git log -oneline —decorate —graph —all  (this will show information in great details)
+  1.  $ git log --oneline —-decorate —-graph —-all  (this will show information in great details)
 
   1a.  $ git log -oneline —decorate —graph  (this will show information in great details only show the details for one branch. you will type this ' $ git log -oneline —decorate —graph' after you       switch branches to another by typing this '$ git checkout someBranchName')
 
@@ -616,7 +643,61 @@ Before you do a merge ALWAYS do 'git diff' or 'git difftool" on the files first.
  1) $ git git difftool master branchNameFeature
  2) Once you see that the master DOES NOT have your changes then do a merge.
  3) $ git merge nameOfFeatureBranch (also make sure you in the master branch when merging)
-(test merge)
+
+	note: warning... YOU CAN NOT DO MERGE UNLESS THE TARGET MERGE IS UP TO DATE!! (so do make sure the files are added and you do a pull request)
+
+
+************Conflicts *************
+
+ 1) $ git mergetool (this gives a 3 way merge look at the conflicts)
+
+  Note: the merge conficted files will show where the conflict starts and stops. When it stops it will show what branch the file is in.
+
+you can make your own ' .ignore" file to stop git from tracking any files you do not want to be kept tracked of.
+ 
+2)  $ git config --global mergetool.keepBackup false (return/enter)
+
+3) $ git config --global --list (return/enter)
+
+
+**** --amend --no-edit
+
+1) $ git --amend --no-edit (this will allow you commit a file without giving a new message and just keep the message from before without giving git a new snapshot. BUT NEVER use --amend if you have already pushed it to git. only use when add to stage. Because it will look like you erased the entire history of the file.)
+
+*** $ git rebase master ****
+
+ 1) $ git rebase master
+
+ 2) after check it by typing: "4 git log --online --decorate --graph --all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
