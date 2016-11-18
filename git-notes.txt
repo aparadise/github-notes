@@ -114,6 +114,20 @@ note: if git stuck in the terminal and i see ":" in the bottom left corner type 
 48) you can make your own ' .ignore" file to stop git from tracking any files you do not want to be kept tracked of.
 
 
+* 49) $ git remote -v (must know this. this is how you can see the push/pull from orgin url)
+
+* 50) $ git log --oneline origin/master (this will show me ONLY the local working copies history)
+
+ 51) $ git log --oneline origin/master
+
+ 52) $ git fetch origin master
+
+ 53) $ git branch -r (shows the invisibale origin/master branches)
+
+ 54) $ git branch -a ( you can see both local and remote branches)
+
+
+
 
 ****Branching notes***
 
@@ -670,9 +684,66 @@ you can make your own ' .ignore" file to stop git from tracking any files you do
 
  2) after check it by typing: "4 git log --online --decorate --graph --all
 
+ 3) $ git rebase --abort
+
+ 4) $ git rebase --continue (this is run after you fix a merge conflict when rebasing)
 
 
 
+***git fetch***
+
+
+ "orgin/master is the local copy of the remote repo"
+
+
+1) $ git log --oneline origin/master (this will show me ONLY the local working copies history. you can campare to master if they are     sinked)
+
+--> note: that the "$ git log --oneline origin/master" DOES not allways show everything. So go to github and make sure you have the files.
+Not to if see files not in sinc on the github website compared to your local even after you do a "$ git log --oneline origin/master" then
+YOU MUST DO A "$ get fetch origin RepoNameBranch"
+
+2) $ git fetch origin master
+
+3) $ git branch -r (shows the invisibale origin/master branches)
+
+4) $ git branch -a ( you can see both local and remote branches)
+
+5) $ git merge origin/master
+
+
+*********** git pull vs git pull-rebase *****
+
+"git fetch" means brings my local copies up to date with my remote repoitory.
+
+"git pull" = (git fetch) followed by (git merge)...meaining it will bring your local code up to date, THEN merge the code to your repo.
+
+" $ git pull --rebase <remote name> <branch name>  (doing it this way is a clearner build. espcially on smaller files. but for large files
+you should do a merge.)
+
+
+------------------How to create a local master repo and attach it to the git up remote repo -----------
+
+1) Log in to your git hub account. You will need to add the same name as your local in git hub by clicking on "new repository"
+
+2) leave every choice as default and just click "create repository"
+
+3) next you will the instructions for quick setup, create new repository, push repository and import code from another repository.
+
+note: you can always check on the comand line to see if you repo made by typing: $ git remote -v
+
+
+4) if you get error that say: “fatal: remote origin already exists”  (then do the following)
+
+--> (http://stackoverflow.com/questions/10904339/github-fatal-remote-origin-already-exists)
+--> type:  $ git remote add github YOUR-GET-Hub-URL.git (then hit enter)
+--> then type $ git remote -v (to check if its there)
+-->Remember though, everywhere in the tutorial you see "origin" you should replace it with "github". For example $ git push origin master should now be $ git push github master.
+
+5) usually you would now type: $ git push -u origin  (may not work so type:"$ git push -u github master")
+--> however this may not work so replace "origin" with "github" because origin will now be trying to see your local 
+so type: $ git push -u github master  (if successfull you will put in user/psw)
+
+(yes)
 
 
 
