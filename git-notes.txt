@@ -744,6 +744,7 @@ note: you can always check on the comand line to see if you repo made by typing:
 so type: $ git push -u github master  (if successfull you will put in user/psw)
 
 (ok)
+( i must know this )
 
 
 
