@@ -743,8 +743,7 @@ note: you can always check on the comand line to see if you repo made by typing:
 --> however this may not work so replace "origin" with "github" because origin will now be trying to see your local 
 so type: $ git push -u github master  (if successfull you will put in user/psw)
 
-(yes)
-
+(ok)
 
 
 
