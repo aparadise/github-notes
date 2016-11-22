@@ -69,7 +69,7 @@ note: $ git remote origin folderName (this you will force a new repo if you do n
 
 29) $ git difftool  (on mac to get the merge tool to open you must type: $ git mergetool )
 
-******>>>> note: working with difftool on the LEFT side is the staging area RIGHT side is local area
+******>>>> note: working with difftool on the LEFT side is the staging area RIGHT side is local area (refere here: https://gist.github.com/tony4d/3454372)
 
 note: working with difftool on the LEFT side is the staging area RIGHT side is local area
 
