@@ -607,7 +607,7 @@ note: if git stuck in the terminal and i see ":" in the bottom left corner type 
   3.  $ git log —stat —oneline -n  2 (limit it two commits)
  * 4.  $ git log -p (this  is to see patches. this is GREAT to see full edit of code for diff.   USE THIS ONE 99% of the time )
   5.  5) $ git log -p —oneline -n 1 (you can limit to just one line of commits or -1)
-  6.  $ git log  directoryName (this let is GREAT for just looking commit history JUST in a specific directory)
+ * 6.  $ git log  directoryName (this let is GREAT for just looking commit history JUST in a specific directory)
   7.  $ git log —oneline —grep=“football” (how to search for a string in a branch. ‘—grep’ is the key to search lines matching a regular expression) 
 
 
@@ -746,6 +746,38 @@ so type: $ git push -u github master  (if successfull you will put in user/psw)
 (ok)
 ( i must know this )
 
+
+***doing a pull request using "--rebase"  and without using --rebase ****
+
+$ git pull --rebase origin master   vs $ git pull origin master
+
+
+
+If you do pull request and you dont want to see al of clutter in and you to keep your changes that have been
+commited locally BUT NOT pushed so that it stays at the head type. This is best used when pulling in short changes:
+$ git pull --rebase origin master
+
+BUT...  if your working on large teams with lots of features then always pull down for updates with :
+ $ git pull origin master
+
+now once you have done the pull request ALWAYS check your history: $ git log --oneline —-decorate —-graph —-all
+
+
+**** $ git show  and $ git reflog   *****
+
+This is GREAT for going back in history by date, time, hour, month. git reflog ONLY shows local history and if you clone a new branch and run a git reflog you will get NO RESULTS because if you have not commit history yet.
+
+NOTE: once you go back into your history in order to restore the file that you want YOU MUST checkou it out into a new brach. a good branch name is: $ checktout -b restoreBranch
+
+Below are commands to know:
+
+1) $ git log -g branchName 
+
+2) $ git show HEAD@{2.months.ago}
+
+3) $ git reset --hard IdNumber
+
+4) git checkout HEAD@{1}
 
 
 
