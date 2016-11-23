@@ -846,6 +846,34 @@ SPECIAL NOTE: when pushing tags github DOES NOT auto do this. You must always ma
 
 18) HOW to push BOTH annotated & light weight tags at the same time type: $ git push origin --tags
 
+
+
+
+---------------HOW TO STASH IN GITHUB----------------
+
+https://git-scm.com/book/en/v1/Git-Tools-Stashing
+
+https://git-scm.com/docs/git-stash
+
+( I only put down 5 of the basic stash useage )
+
+
+
+1) $ git stash 
+
+(this will stash/save the current working local area file so you can do and update without your files being updated or having to add/commit that file that your currently working on that you do not want to commit)
+
+
+2) $ git status
+ (you must run a $ git status to make sure that you now have clean directory so you know your files have been stashed)
+
+
+3) $ git stash list 
+ (this will show you all of your stashed files)
+
+4) If you ONLY have 1 stashed file type: $ git stash apply
+
+5) If you have more than 1 stashed file and you need to pick one type: $ git stash apply stash@{2}
  
 
 
