@@ -67,7 +67,9 @@ note: $ git remote origin folderName (this you will force a new repo if you do n
 
 28) $ git diff
 
-29) $ git difftool
+29) $ git difftool  (on mac to get the merge tool to open you must type: $ git mergetool )
+
+******>>>> note: working with difftool on the LEFT side is the staging area RIGHT side is local area (refere here: https://gist.github.com/tony4d/3454372)
 
 note: working with difftool on the LEFT side is the staging area RIGHT side is local area
 
@@ -131,17 +133,17 @@ note: if git stuck in the terminal and i see ":" in the bottom left corner type 
 
 ****Branching notes***
 
-  46.  $ git log -oneline —decorate —graph —all  (this will show information in great details)
-  47.  $git log —stat (this will show you files altered and lined deleted. and when you hit space bar you can see files)
-  48.  $ git log —stat —oneline -n  2 (limit it two commits)
+  46.  $ git log -oneline â€”decorate â€”graph â€”all  (this will show information in great details)
+  47.  $git log â€”stat (this will show you files altered and lined deleted. and when you hit space bar you can see files)
+  48.  $ git log â€”stat â€”oneline -n  2 (limit it two commits)
   49.  $ git log -p (this  is to see patches. this is GREAT to see full edit of code for diff )
-  50.  $ git log -p —oneline -n 1 (you can limit to just one line of commits or -1)
+  50.  $ git log -p â€”oneline -n 1 (you can limit to just one line of commits or -1)
   51.  $ git log  directoryName (this let is GREAT for just looking commit history JUST in a specific directory)
-  52.  $ git log —oneline —grep=“football” (how to search for a string in a branch. ‘—grep’ is the key to search lines matching a regular expression) 
+  52.  $ git log â€”oneline â€”grep=â€œfootballâ€ (how to search for a string in a branch. â€˜â€”grepâ€™ is the key to search lines matching a regular expression) 
 
 
 
-note: A git “branch” represents and independent line of development.
+note: A git â€œbranchâ€ represents and independent line of development.
 
 
 We create a NEW BRANCH when we want to develop a new feature or a bug fix no matter if its big or small. Because new code is NEVER committed to the main master branch until its passed in the release QA branch, QA approves its and releases a push to the master branch. A new branch ALWAYS gets town working directory, index or staging area and commit history automatically once you create it.
@@ -150,9 +152,11 @@ We create a NEW BRANCH when we want to develop a new feature or a bug fix no mat
  53.   $ git branch -a (this means to see ALL the branches you have. it will show all)
  54.   $ git branch a (this will JUST return your local branches)
  55.   $ git branch newBranch name (this is how you make a new branch)
+       $ git checkout -b newBranchName (how you create a NEW branch. once you do this it will auto kick you out of the current branch into     the create branch. the it will inherit all of the commits from its parent branch)
+ 
  56.   $ git branch -m currentBranchName NewBranchName (this will change the name of the old current branch to rename it)
  57.   $ git branch -d branchName (this is how you delete a branch)
- 58.   $ git branch -D branchName  (this is warning from git that you must type a capital “-D” if you want to delete a sub branch that has NOT been merged. This way git will not allow you to accidentally delete a branch that has changes that you have not merged to the master branch yet just to make sure. So -D will allow you to delete a branch that does not have merged files.) 
+ 58.   $ git branch -D branchName  (this is warning from git that you must type a capital â€œ-Dâ€ if you want to delete a sub branch that has NOT been merged. This way git will not allow you to accidentally delete a branch that has changes that you have not merged to the master branch yet just to make sure. So -D will allow you to delete a branch that does not have merged files.) 
 
 
 note:  you will see all of your branches you will notice that your sub branches are under the master branch. Then you will need to checkout the subbranch you want to work into that branch to create directories and files..
@@ -171,7 +175,7 @@ note:  you will see all of your branches you will notice that your sub branches 
     d) delete a entire branch type: $ git branch -d yourBranchName ( you want be able to delete the branch if the files inside HAS NOT been commited. so if you are sure that you dont want to commit      anything  in the branch then you can for the branch to delete by typing: $ git branch -D branchName (notice its a capital "D")
 
 note: to list your branches type: $ git branch -a
-note: always check your branches:  $ git log --oneline —-decorate -—graph -—all
+note: always check your branches:  $ git log --oneline â€”-decorate -â€”graph -â€”all
 
 **** --amend --no-edit
 
@@ -610,16 +614,16 @@ note: if git stuck in the terminal and i see ":" in the bottom left corner type 
 ******GIT COMMANDS DEEP DIVE
 
 
-  1.  $ git log --oneline —-decorate —-graph —-all  (this will show information in great details)
+  1.  $ git log --oneline â€”-decorate â€”-graph â€”-all  (this will show information in great details)
 
-  1a.  $ git log -oneline —decorate —graph  (this will show information in great details only show the details for one branch. you will type this ' $ git log -oneline —decorate —graph' after you       switch branches to another by typing this '$ git checkout someBranchName')
+  1a.  $ git log -oneline â€”decorate â€”graph  (this will show information in great details only show the details for one branch. you will type this ' $ git log -oneline â€”decorate â€”graph' after you       switch branches to another by typing this '$ git checkout someBranchName')
 
-  2.  $git log —stat (this will show you files altered and lined deleted. and when you hit space bar you can see files)
-  3.  $ git log —stat —oneline -n  2 (limit it two commits)
+  2.  $git log â€”stat (this will show you files altered and lined deleted. and when you hit space bar you can see files)
+  3.  $ git log â€”stat â€”oneline -n  2 (limit it two commits)
  * 4.  $ git log -p (this  is to see patches. this is GREAT to see full edit of code for diff.   USE THIS ONE 99% of the time )
-  5.  5) $ git log -p —oneline -n 1 (you can limit to just one line of commits or -1)
+  5.  5) $ git log -p â€”oneline -n 1 (you can limit to just one line of commits or -1)
  * 6.  $ git log  directoryName (this let is GREAT for just looking commit history JUST in a specific directory)
-  7.  $ git log —oneline —grep=“football” (how to search for a string in a branch. ‘—grep’ is the key to search lines matching a regular expression) 
+  7.  $ git log â€”oneline â€”grep=â€œfootballâ€ (how to search for a string in a branch. â€˜â€”grepâ€™ is the key to search lines matching a regular expression) 
 
 
 
@@ -631,7 +635,7 @@ note: if git stuck in the terminal and i see ":" in the bottom left corner type 
 ***********
 
 
-note: A git “branch” represents and independent line of development.
+note: A git â€œbranchâ€ represents and independent line of development.
 
 
 We create a NEW BRANCH when we want to develop a new feature or a bug fix no matter if its big or small. Because new code is NEVER committed to the main master branch until its passed in the release QA branch, QA approves its and releases a push to the master branch. A new branch ALWAYS gets town working directory, index or staging area and commit history automatically once you create it.
@@ -642,7 +646,7 @@ We create a NEW BRANCH when we want to develop a new feature or a bug fix no mat
  3.   $ git branch newBranch name (this is how you make a new branch)
  4.   $ git branch -m currentBranchName NewBranchName (this will change the name of the old current branch to rename it)
  5.   $ git branch -d branchName (this is how you delete a branch)
- 6.   $ git branch -D branchName  (this is warning from git that you must type a capital “-D” if you want to delete a sub branch that has NOT been merged. This way git will not allow you to accidentally delete a branch that has changes that you have not merged to the master branch yet just to make sure. So -D will allow you to delete a branch that does not have merged files.) 
+ 6.   $ git branch -D branchName  (this is warning from git that you must type a capital â€œ-Dâ€ if you want to delete a sub branch that has NOT been merged. This way git will not allow you to accidentally delete a branch that has changes that you have not merged to the master branch yet just to make sure. So -D will allow you to delete a branch that does not have merged files.) 
 
 
 note:  you will see all of your branches you will notice that your sub branches are under the master branch. Then you will need to checkout the subbranch you want to work into that branch to create directories and files..
@@ -653,7 +657,7 @@ note:  you will see all of your branches you will notice that your sub branches 
 
 
  1.   $ git checkout -b newBranchName master (this is how you make a new branch and copy everything from the master. once you do this 
-      do $ git log —online to make sure you have the same commit details. and another way to check is to do a checkout on both branches the new     
+      do $ git log â€”online to make sure you have the same commit details. and another way to check is to do a checkout on both branches the new     
   branch and the master to compare history files.)
 
  note: Understand that when you make a NEW branch it auto inherits the commit history from its parents branch. If you want to control the parent branch make sure you add the name of it
@@ -743,7 +747,7 @@ you should do a merge.)
 note: you can always check on the comand line to see if you repo made by typing: $ git remote -v
 
 
-4) if you get error that say: “fatal: remote origin already exists”  (then do the following)
+4) if you get error that say: â€œfatal: remote origin already existsâ€  (then do the following)
 
 --> (http://stackoverflow.com/questions/10904339/github-fatal-remote-origin-already-exists)
 --> type:  $ git remote add github YOUR-GET-Hub-URL.git (then hit enter)
@@ -771,7 +775,7 @@ $ git pull --rebase origin master
 BUT...  if your working on large teams with lots of features then always pull down for updates with :
  $ git pull origin master
 
-now once you have done the pull request ALWAYS check your history: $ git log --oneline —-decorate —-graph —-all
+now once you have done the pull request ALWAYS check your history: $ git log --oneline â€”-decorate â€”-graph â€”-all
 
 
 **** $ git show  and $ git reflog   *****
