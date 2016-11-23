@@ -152,6 +152,8 @@ We create a NEW BRANCH when we want to develop a new feature or a bug fix no mat
  53.   $ git branch -a (this means to see ALL the branches you have. it will show all)
  54.   $ git branch a (this will JUST return your local branches)
  55.   $ git branch newBranch name (this is how you make a new branch)
+       $ git checkout -b newBranchName (how you create a NEW branch. once you do this it will auto kick you out of the current branch into     the create branch. the it will inherit all of the commits from its parent branch)
+ 
  56.   $ git branch -m currentBranchName NewBranchName (this will change the name of the old current branch to rename it)
  57.   $ git branch -d branchName (this is how you delete a branch)
  58.   $ git branch -D branchName  (this is warning from git that you must type a capital “-D” if you want to delete a sub branch that has NOT been merged. This way git will not allow you to accidentally delete a branch that has changes that you have not merged to the master branch yet just to make sure. So -D will allow you to delete a branch that does not have merged files.) 
