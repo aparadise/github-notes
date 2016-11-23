@@ -14,7 +14,7 @@
 
 7) $ git init (this is how you create a NEW git repository.) 
 
-8) use the vi editor to edit in the terminal type: vi FileName
+8) use the "vi" or "vim" editor to edit in the terminal type: vi FileName or vim Filename
 
 9) $ git commit -a -m "message name" or $ git commit -am "message" (fast way to commit a file is called "express commit")
 
@@ -813,6 +813,18 @@ Below are commands to know:
  (note: the short hand commit for annotated is "-a" and long way is "--annotated" )
 
  (note: if you forget the type the "-m" it will still prompt you to write a message)
+
+
+
+9) $ git cat-file -t v-Tag-number-rc2  (when you hit return it will show "tag" keyword in the terminal)
+
+note: "git cat-file" provides the content type or size of a git object. The "-t" is the type. Once  you hit return you should see
+"tag" on the screen.
+
+if the return is "commit" it is called a light-weight tag. If it says "tag" then it means if has a copy of it.
+
+10) $ git tag -l "v-tag-Number" (this shows a FULL LIST of tag numbers)
+
 
 
 
