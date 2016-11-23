@@ -1,5 +1,4 @@
-# Commands for unix 
-
+﻿Commands for unix
 
 1) ls -l (this will list all the directorys by a FULL detal view with date, size and name. however 'ls -al' will do the same but show hidden files )
 
@@ -810,7 +809,7 @@ Below are commands to know:
 
 7) $ git show v-TAG-NUMBER
 
-8) $ git tag -a v-TAG-Number-rc2 -m "commit message" or $ git tag --annotated v-TAG-Number-rc2 -m "commit message" or 
+8) $ git tag -a v-TAG-Number-rc2 -m "commist message" or $ git tag --annotated v-TAG-Number-rc2 -m "commist message" or 
  (note: the short hand commit for annotated is "-a" and long way is "--annotated" )
 
  (note: if you forget the type the "-m" it will still prompt you to write a message)
@@ -826,8 +825,11 @@ if the return is "commit" it is called a light-weight tag. If it says "tag" then
 
 10) $ git tag -l "v-tag-Number" (this shows a FULL LIST of tag numbers)
 
-11) how to update a commit: 
 
+
+12) $ git tag -a v-TAG-NUMBER --force commitId or $ git tag -a v-TAG-NUMBER --f commitId (this is how you pass the same commit message to another commit)
+
+13) $ git tag v-Tag-Number --delete (how you delete tags)
 
 
 
