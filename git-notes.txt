@@ -178,6 +178,17 @@ note: always check your branches:  $ git log --oneline —-decorate -—graph -—all
 60) $ git --amend --no-edit (this will allow you commit a file without giving a new message and just keep the message from before)
 
 
+61) $ git reflog (this will show ALL of your work history for local branch since the begining of time)
+
+62) $ git show HEAD@{numberGoesHere once you do $ git reflog}
+   
+    exapmple:  $ git show HEAD@{7}
+--> other formats to check history is--> 1.minute.ago, 1.hourago, 1.day.ago, yesterday, 1.month.ago, 1.year.ago, 20-11-05-      17.09.00:00:00, 1.day.2.hours.ago
+
+---> $ git show HEAD@{1.day.ago}
+
+
+64) $ git show master (or what ever branch name u want to look at)
 
 
 
@@ -778,6 +789,17 @@ Below are commands to know:
 3) $ git reset --hard IdNumber
 
 4) git checkout HEAD@{1}
+
+
+-------------------git tag ---------------
+
+1) $ git tag v-SOME-VERSION-NUMber-rc1 (rc = release candiate. you tag only your local)
+
+2) $ git tag --list
+
+4) $ git tag (if you just do a "$ git tag" then you mus run a "$ git show" after)
+
+5) $ git show
 
 
 
