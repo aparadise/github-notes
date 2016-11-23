@@ -841,12 +841,21 @@ if the return is "commit" it is called a light-weight tag. If it says "tag" then
 16) delete all tags at once type: $ git push origin :v-tag-number :v-tag-number :v-tag-number :v-tag-number
 
 SPECIAL NOTE: when pushing tags github DOES NOT auto do this. You must always manually push the tags to the remote server once you have tagged your branch in your local repo! You can push both light weight tags and annotated tags.
+Also you should ONLY push tagged annotated files to the server and keep the light weight tags on your local.
 
 17) How to push ONLY annotated tags type: $ git push origin --follow-tags
 
 18) HOW to push BOTH annotated & light weight tags at the same time type: $ git push origin --tags
 
 
+Now if you want to set up config for auto pushing annotated tags type: $ git config --global push.followTags true
+then check it by typing: $ git config --global --list
+
+
+
+How to make a branch from a tagged branch version number.
+
+19) $ git checkout -b newReleaseBranchName-v-tag-Number v-tag-number-that-i-will-copy
 
 
 ---------------HOW TO STASH IN GITHUB----------------
@@ -874,6 +883,17 @@ https://git-scm.com/docs/git-stash
 4) If you ONLY have 1 stashed file type: $ git stash apply
 
 5) If you have more than 1 stashed file and you need to pick one type: $ git stash apply stash@{2}
+
+
+
+---------how to see your git configurations ---
+
+type: $ git config --global --list
+
+
+
+----REMEMBER to push a file for the first time a NEW repo is created type: $ git push -u origin master )
+
  
 
 
