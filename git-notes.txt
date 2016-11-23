@@ -809,7 +809,8 @@ Below are commands to know:
 
 7) $ git show v-TAG-NUMBER
 
- ---annotated tags  ---
+8) $ git tag -a v-TAG-Number-rc2 -m "commist message" or $ git tag --annotated v-TAG-Number-rc2 -m "commist message" or 
+ (note: the short hand commit for annotated is "-a" and long way is "--annotated" )
 
 
 
