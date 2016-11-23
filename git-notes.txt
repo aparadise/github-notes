@@ -833,6 +833,22 @@ if the return is "commit" it is called a light-weight tag. If it says "tag" then
 
 13) $ git tag v-Tag-Number --delete (how you delete tags)
 
+14) $ git push origin --tags (this is how you push all tags to remote git repo to create the release branches)
+
+15) $ git push origin :v-tag-number (this is how you delete tags from remote git repo delete the release branches)
+   ----> remember to use a ":" when deleting tags :v-Tag-Number
+
+16) delete all tags at once type: $ git push origin :v-tag-number :v-tag-number :v-tag-number :v-tag-number
+
+SPECIAL NOTE: when pushing tags github DOES NOT auto do this. You must always manually push the tags to the remote server once you have tagged your branch in your local repo! You can push both light weight tags and annotated tags.
+
+17) How to push ONLY annotated tags type: $ git push origin --follow-tags
+
+18) HOW to push BOTH annotated & light weight tags at the same time type: $ git push origin --tags
+
+ 
+
+
 
 
 
