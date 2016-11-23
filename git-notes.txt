@@ -1,4 +1,4 @@
-Commands for unix
+﻿Commands for unix
 
 1) ls -l (this will list all the directorys by a FULL detal view with date, size and name. however 'ls -al' will do the same but show hidden files )
 
@@ -804,6 +804,13 @@ Below are commands to know:
 4) $ git tag (if you just do a "$ git tag" then you mus run a "$ git show" after)
 
 5) $ git show
+
+6) $ git tag (this will list all of the tags in the local repo)
+
+7) $ git show v-TAG-NUMBER
+
+ ---annotated tags  ---
+
 
 
 
