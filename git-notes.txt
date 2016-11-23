@@ -812,7 +812,7 @@ Below are commands to know:
 8) $ git tag -a v-TAG-Number-rc2 -m "commist message" or $ git tag --annotated v-TAG-Number-rc2 -m "commist message" or 
  (note: the short hand commit for annotated is "-a" and long way is "--annotated" )
 
-
+ (note: if you forget the type the "-m" it will still prompt you to write a message)
 
 
 
