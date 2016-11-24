@@ -878,7 +878,7 @@ https://git-scm.com/docs/git-stash
 
 
 3) $ git stash list 
- (this will show you all of your stashed files)
+ (this will show you all of your stashed files in reverse order from the number 0 being the newest. always check to see if you have more than one stash if so using $ git stash apply will not work. you will need the stash number example:   $ git stash apply stash@{2})
 
 4) If you ONLY have 1 stashed file type: $ git stash apply
 
@@ -886,6 +886,10 @@ https://git-scm.com/docs/git-stash
 
 
 6) $ git stash save  "this how you leave a message for stash"
+
+7) WIP = Work In Progress
+
+8) $ git stash show stash@{yourStashNumber}
 
 
 ---------how to see your git configurations ---
