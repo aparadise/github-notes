@@ -1,6 +1,11 @@
 ﻿Commands for unix
 
-(test)
+(helpful cheath sheet links)
+
+https://education.github.com/git-cheat-sheet-education.pdf
+
+http://rogerdudler.github.io/git-guide/
+
 
 1) ls -l (this will list all the directorys by a FULL detal view with date, size and name. however 'ls -al' will do the same but show hidden files )
 
@@ -24,7 +29,22 @@
 
 11) $ git checkout -b new-Branch-Name (to add a new branch AFTER you detach a file from head to make changes)
 
-12) $ git add . (return/enter)(note--- if you use git '$ git add .' you are adding ALL the files that are in the staging area) $ git commit -m "some message"
+12) $ git add <fileName> (or for all files type) $ git add . (return/enter)(note--- if you use git '$ git add .' you are adding     ALL the files that are in the staging area) $ git commit -m "some message"
+
+add & commit
+
+You can propose changes (add it to the Index) using
+git add <filename>
+git add * (this "*" meand add all files),
+This is the first step in the basic git workflow. To actually commit these changes use
+git commit -m "Commit message"
+Now the file is committed to the HEAD, but not in your remote repository yet.
+
+
+
+
+
+
 
 13) how to "revert" a commited file. type: $ git revert HEAD (this will auto open VI editor to make changes)
 
@@ -894,6 +914,19 @@ https://git-scm.com/docs/git-stash
 9) $ git stash drop 
 
 10) $ git stash drop stash@{1}
+
+
+11) $ git stash pop stash@{2} (this will also move a stash)
+
+
+12) $ git stash clear (will delete all stash file at one time)
+
+
+How to move ALL stashed files to a differetn branch.
+13) 
+
+
+
 
 ---------how to see your git configurations ---
 
