@@ -885,6 +885,10 @@ https://git-scm.com/docs/git-stash
 5) If you have more than 1 stashed file and you need to pick one type: $ git stash apply stash@{2}
 
 
+6) $ git stash save  "this how you leave a message for stash"
+
+7) WIP = Work In Progress
+
 
 ---------how to see your git configurations ---
 
