@@ -933,7 +933,7 @@ https://git-scm.com/docs/git-stash
 
 
 
-1) $ git stash 
+1) $ git stash  or $ git stash -u ( "-u" will stash both tracked and untracked files. Note by default git stash ONLY stashes tracked files)
 
 (this will stash/save the current working local area file so you can do and update without your files being updated or having to add/commit that file that your currently working on that you do not want to commit)
 
@@ -968,12 +968,17 @@ https://git-scm.com/docs/git-stash
 
 
 How to move ALL stashed files to a differetn branch.
-13) 
+
+13) $ git stash branch <branchName>
+
+14) $ git stash apply --index (this will apply the stash and put everything back to its original working status)
+
+15) $ git stash --keep-index (this will save your working direcotry and index state WIP)
 
 
 
 
----------how to see your git configurations ---
+----------how to see your git configurations ---
 
 type: $ git config --global --list
 
