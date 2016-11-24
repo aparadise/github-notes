@@ -29,6 +29,21 @@ http://rogerdudler.github.io/git-guide/
 
 11) $ git checkout -b new-Branch-Name (to add a new branch AFTER you detach a file from head to make changes)
 
+
+
+
+replace local changes
+
+In case you did something wrong, which for sure never happens ;), you can replace local changes using the command
+git checkout -- <filename>
+this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+
+If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this
+git fetch origin
+git reset --hard origin/master
+
+
+
 12) $ git add <fileName> (or for all files type) $ git add . (return/enter)(note--- if you use git '$ git add .' you are adding     ALL the files that are in the staging area) $ git commit -m "some message"
 
 add & commit
@@ -144,6 +159,25 @@ note: if git stuck in the terminal and i see ":" in the bottom left corner type 
 
  51) $ git log --oneline origin/master
 
+
+
+log
+
+in its simplest form, you can study repository history using.. git log
+You can add a lot of parameters to make the log look like what you want. To see only the commits of a certain author:
+git log --author=bob
+To see a very compressed log where each commit is one line:
+git log --pretty=oneline
+Or maybe you want to see an ASCII art tree of all the branches, decorated with the names of tags and branches:
+git log --graph --oneline --decorate --all
+See only which files have changed:
+git log --name-status
+These are just a few of the possible parameters you can use. For more, see git log --help
+
+
+
+
+
  52) $ git fetch origin master
 
  53) $ git branch -r (shows the invisibale origin/master branches)
@@ -199,6 +233,13 @@ note:  you will see all of your branches you will notice that your sub branches 
 note: to list your branches type: $ git branch -a
 note: always check your branches:  $ git log --oneline —-decorate -—graph -—all
 
+
+
+git log --graph; each dot represents a commit, the lines represent parent relationships, and refs are shown as colored boxes. The yellow dot represents HEAD, and the red dot represents changes that are yet to become a commit. At the bottom is a view of the selected commit; the comments and patch on the left, and a summary view on the right. In between is a collection of controls used for searching history.
+
+
+
+
 **** --amend --no-edit
 
 60) $ git --amend --no-edit (this will allow you commit a file without giving a new message and just keep the message from before)
@@ -217,6 +258,10 @@ note: always check your branches:  $ git log --oneline —-decorate -—graph -�
 64) $ git show master (or what ever branch name u want to look at)
 
 
+67) gitk (just type this one command line to get a pretty color working format of the branch history) 
+
+
+git log --graph; each dot represents a commit, the lines represent parent relationships, and refs are shown as colored boxes. The yellow dot represents HEAD, and the red dot represents changes that are yet to become a commit. At the bottom is a view of the selected commit; the comments and patch on the left, and a summary view on the right. In between is a collection of controls used for searching history.
 
 
 ********************Unzip a file **********
