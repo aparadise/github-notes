@@ -696,6 +696,8 @@ note: if git stuck in the terminal and i see ":" in the bottom left corner type 
   5.  5) $ git log -p —oneline -n 1 (you can limit to just one line of commits or -1)
  * 6.  $ git log  directoryName (this let is GREAT for just looking commit history JUST in a specific directory)
   7.  $ git log —oneline —grep=“football” (how to search for a string in a branch. ‘—grep’ is the key to search lines matching a regular expression) 
+   8. gitk (built in git gui)
+    9. gitk --all (built in git gui)
 
 
 
