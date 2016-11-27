@@ -7,6 +7,10 @@ https://education.github.com/git-cheat-sheet-education.pdf
 http://rogerdudler.github.io/git-guide/
 
 
+Remember: if stuck in command line type: control+c
+Remember: if you want to close the command line window type: exit
+
+
 1) ls -l (this will list all the directorys by a FULL detal view with date, size and name. however 'ls -al' will do the same but show hidden files )
 
 2) ls -al (will show all file details including hidden files. however 'ls -l' WILL not show hidden files)
@@ -736,7 +740,7 @@ after this command: "$ git checkout -b newBranchName master" and you check this 
 
 Before you do a merge ALWAYS do 'git diff' or 'git difftool" on the files first.
 
- 1) $ git git difftool master branchNameFeature
+ 1) $ git difftool master branchNameFeature
  2) Once you see that the master DOES NOT have your changes then do a merge.
  3) $ git merge nameOfFeatureBranch (also make sure you in the master branch when merging)
 
@@ -835,7 +839,7 @@ $ git pull --rebase origin master   vs $ git pull origin master
 
 
 
-If you do pull request and you dont want to see al of clutter in and you to keep your changes that have been
+If you do pull request and you dont want to see all of clutter in and you to keep your changes that have been
 commited locally BUT NOT pushed so that it stays at the head type. This is best used when pulling in short changes:
 $ git pull --rebase origin master
 
@@ -986,10 +990,18 @@ type: $ git config --global --list
 
 ----REMEMBER to push a file for the first time a NEW repo is created type: $ git push -u origin master )
 
+
+/* note: when looking at: $git log --oneline --decorate --graph --all 
+
+     origin/master (means I am on the github remote origin)
+     Head, master (means only on local its not yet been pushed to gitbub)
+
+*/
+
  
 
 
-
+(i got this shit)
 
 
 
