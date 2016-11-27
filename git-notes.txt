@@ -9,6 +9,7 @@ http://rogerdudler.github.io/git-guide/
 
 Remember: if stuck in command line type: control+c
 Remember: if you want to close the command line window type: exit
+Remember: if I am in prompt with ":" type: q
 
 
 1) ls -l (this will list all the directorys by a FULL detal view with date, size and name. however 'ls -al' will do the same but show hidden files )
